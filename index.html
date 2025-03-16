@@ -1,67 +1,133 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allyson Aires - Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0a1f44, #004488);
+            color: white;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            color: #00aaff;
+        }
+        .cv-button {
+            background: none;
+            border: 2px solid #00aaff;
+            color: #00aaff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .cv-button:hover {
+            background: #00aaff;
+            color: white;
+        }
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('assets/images/gradient-bg.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .hero h1 {
+            font-size: 36px;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #ddd;
+        }
+        .section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .icon-container a {
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            text-align: center;
+        }
+        .icon-container i {
+            font-size: 40px;
+            transition: 0.3s;
+        }
+        .icon-container a:hover i {
+            color: #00aaff;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Fundo Animado -->
-    <canvas id="starCanvas"></canvas> <!-- Adicionei um ID específico -->
-
-    <!-- Texto de Apresentação -->
-    <div id="intro">
-        <h1>Bem-vindo ao meu Universo!</h1>
-        <p>Sou Allyson Aires, engenheiro de produção e pesquisador em otimização de processos e ciência de dados.</p>
+    <div class="navbar">
+        <div><strong>Allyson Aires</strong></div>
+        <div>
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#premios">Prêmios e Reconhecimentos</a>
+            <a href="#contato">Contato</a>
+        </div>
     </div>
 
-    <!-- Planetas - Menu de Navegação -->
-    <div class="planet-container">
-        <div class="planet">
-            <a href="#sobre">
-                <img src="assets/gift/VIR.gif" alt="Sobre Mim">
-                <div class="planet-label">Sobre Mim</div>
-            </a>
-        </div>
-        <div class="planet">
-            <a href="#habilidades">
-                <img src="assets/gift/VU4B.gif" alt="Habilidades">
-                <div class="planet-label">Habilidades</div>
-            </a>
-        </div>
-        <div class="planet">
-            <a href="#projetos">
-                <img src="assets/gift/vsgif_com__.2926875.gif" alt="Projetos">
-                <div class="planet-label">Projetos</div>
-            </a>
-        </div>
-        <div class="planet">
-            <a href="#premios">
-                <img src="assets/gift/1F4J.gif" alt="Prêmios">
-                <div class="planet-label">Prêmios</div>
-            </a>
-        </div>
-        <div class="planet">
-            <a href="#contato">
-                <img src="assets/gift/VLmi.gif" alt="Contato">
-                <div class="planet-label">Contato</div>
-            </a>
-        </div>
+    <div class="hero">
+        <h1>Bem-vindo ao meu Portfólio</h1>
+        <p>Engenheiro de Produção | Ciência de Dados | Otimização de Processos</p>
     </div>
 
    <!-- Seções do Site -->
    <section class="section" id="sobre">
     <h1>Sobre Mim</h1>
     <p class="justificado">
-        Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong> e <strong>Engenharia de Dados</strong>. Minha experiência abrange <strong>análise e manipulação de dados, otimização de processos e suporte à tomada de decisão</strong>, aplicando modelos matemáticos e ferramentas de inteligência analítica para soluções estratégicas.
+        Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong> e <strong>Engenharia de Dados</strong>. Minha experiência inclui <strong>análise e manipulação de dados, otimização de processos e suporte à tomada de decisão</strong>, aplicando modelos matemáticos e ferramentas de inteligência analítica para soluções estratégicas.
     </p>
     <p class="justificado">
-        Atualmente, atuo no <strong>Tribunal de Justiça do Rio Grande do Norte (TJRN)</strong>, onde desenvolvo <strong>dashboards interativos</strong> e <strong>relatórios estratégicos</strong> utilizando <strong>Excel e Power BI</strong> para otimizar a gestão e visualização de dados. Minha abordagem combina <strong>tecnologia, ciência de dados e análise de processos</strong> para impulsionar a eficiência e a inovação nas organizações.
+        Atualmente, atuo no <strong>Tribunal de Justiça do Rio Grande do Norte (TJRN)</strong>, desenvolvendo <strong>dashboards interativos</strong> e <strong>relatórios estratégicos</strong> utilizando <strong>Excel e Power BI</strong>, otimizando a gestão e visualização de dados. Minha abordagem combina <strong>tecnologia, ciência de dados e análise de processos</strong> para impulsionar a eficiência e inovação organizacional.
     </p>
-    <section class="section" id="habilidades">
+   </section>
+
+   <section id="habilidades">
         <h1>Habilidades</h1>
     
         <!-- Habilidades em Tecnologia -->
@@ -122,62 +188,59 @@
                 <p>Análise de fluxos, previsão de demanda e gestão de estoques</p>
             </div>
         </div>
-    </section>
-    
+   </section>
+   <section id="projetos">
+     <h1>Projetos</h1>
 
-    <section class="section" id="projetos">
-        <h1>Projetos</h1>
-    
-        <div class="project-container">
-            <!-- Projeto 1 -->
-            <div class="project-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>GLOBE Research Dashboard</h3>
-                <p>
-                    Desenvolvimento de um dashboard interativo para análise de pesquisas acadêmicas, 
-                    utilizando Streamlit, Pandas e Web Scraping com Selenium.
-                </p>
-                <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/" 
-                   target="_blank" 
-                   class="project-link">Acessar Projeto</a>
-            </div>
-    
-            <!-- Projeto 2 -->
-            <div class="project-card">
-                <i class="fas fa-globe"></i>
-                <h3>Portfólio Pessoal</h3>
-                <p>
-                    Meu site pessoal onde apresento meus projetos, habilidades e experiências profissionais.
-                </p>
-                <a href="https://allysonaires.github.io/" 
-                   target="_blank" 
-                   class="project-link">Visitar Portfólio</a>
-            </div>
-        
-            <!-- Projeto 3 -->
-            <div class="project-card">
-                <i class="fas fa-balance-scale"></i>
-                <h3>Tribunal de Justiça do RN</h3>
-                <p>
-                    Criação de dashboards interativos para otimizar a visualização de indicadores estratégicos.
-                </p>
-            </div>
-        
-            <!-- Projeto 4 -->
-            <div class="project-card">
-                <i class="fas fa-tree"></i>
-                <h3>Luzes do Potengi</h3>
-                <p>
-                    Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais e uma 
-                    atmosfera festiva. Fiz parte da criação e estruturação do evento, ajudando no planejamento 
-                    das atrações, organização e mobilização da comunidade.
-                </p>
-            </div>
+    <div class="project-container">
+        <!-- Projeto 1 -->
+        <div class="project-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>GLOBE Research Dashboard</h3>
+            <p>
+                Desenvolvimento de um dashboard interativo para análise de pesquisas acadêmicas, 
+                utilizando Streamlit, Pandas e Web Scraping com Selenium.
+            </p>
+            <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/" 
+               target="_blank" 
+               class="project-link">Acessar Projeto</a>
         </div>
-    </section>
-    
 
-<section class="section" id="premios">
+        <!-- Projeto 2 -->
+        <div class="project-card">
+            <i class="fas fa-globe"></i>
+            <h3>Portfólio Pessoal</h3>
+            <p>
+                Meu site pessoal onde apresento meus projetos, habilidades e experiências profissionais.
+            </p>
+            <a href="https://allysonaires.github.io/" 
+               target="_blank" 
+               class="project-link">Visitar Portfólio</a>
+        </div>
+    
+        <!-- Projeto 3 -->
+        <div class="project-card">
+            <i class="fas fa-balance-scale"></i>
+            <h3>Tribunal de Justiça do RN</h3>
+            <p>
+                Criação de dashboards interativos para otimizar a visualização de indicadores estratégicos.
+            </p>
+        </div>
+    
+        <!-- Projeto 4 -->
+        <div class="project-card">
+            <i class="fas fa-tree"></i>
+            <h3>Luzes do Potengi</h3>
+            <p>
+                Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais e uma 
+                atmosfera festiva. Fiz parte da criação e estruturação do evento, ajudando no planejamento 
+                das atrações, organização e mobilização da comunidade.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="premios">
     <h1>🏆 Prêmios e Reconhecimentos</h1>
 
     <div class="award-container">
@@ -201,6 +264,7 @@
     </div>
 </section>
 
+
 <section class="section" id="contato">
     <h1>Contato</h1>
     <div class="contact-icons">
@@ -223,15 +287,6 @@
     </div>
 </section>
 
-
 <footer class="footer">
     <p>© 2024 Allyson Aires Pimentel da Silva. Todos os direitos reservados.</p>
 </footer>
-
-
-    <!-- Scripts -->
-    <script defer src="assets/js/stars.js"></script>
-    <script defer src="assets/js/main.js"></script>
-
-</body>
-</html>
