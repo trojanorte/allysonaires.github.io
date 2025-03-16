@@ -486,3 +486,174 @@ body {
     font-size: 1em;
     color: rgba(255, 255, 255, 0.9);
 }
+.hero h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Ajusta o espaçamento entre as letras */
+}
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    /* Ajuste da navbar para dispositivos móveis */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar div {
+        margin-bottom: 10px;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Ajuste da seção Hero */
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 24px; /* Reduzindo o tamanho da fonte */
+        word-spacing: 2px; /* Adicionando espaçamento entre palavras */
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Ajuste das seções */
+    .section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Ajuste dos cartões para telas menores */
+    .habilidades-container,
+    .project-container,
+    .award-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .project-card,
+    .award-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* Ajuste dos ícones de contato */
+    .contact-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-icons a {
+        font-size: 16px;
+    }
+
+    .contact-icons i {
+        font-size: 30px;
+    }
+}
+/* 🔹 Navbar principal */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Links da navbar */
+.navbar-links {
+    display: flex;
+    gap: 30px; /* 🔥 Aumentando o espaçamento entre os links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 10px 20px; /* 🔥 Adicionando mais espaço interno */
+    white-space: nowrap; /* 🔥 Evita que os links quebrem */
+}
+
+.navbar a:hover {
+    color: #00aaff;
+}
+
+/* 🔹 Menu Hambúrguer para Telas Menores */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* 🔹 Ajuste para telas menores */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        display: none; /* 🔥 Esconde o menu por padrão */
+    }
+
+    .navbar-links.active {
+        display: flex; /* 🔥 Mostra o menu quando ativo */
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+}
+.navbar {
+    width: 100vw; /* 🔥 Garante que a navbar ocupa toda a largura da tela */
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 10px 20px; /* 🔥 Adicionando mais espaço interno */
+    white-space: nowrap; /* 🔥 Evita que os itens do menu quebrem */
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 🔥 Evita rolagem horizontal */
+}
