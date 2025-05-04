@@ -266,7 +266,52 @@
         </div>
     </div>
 </section>
-
+<style>
+    #cy {
+      width: 100%;
+      height: 500px; /* ajuste conforme necessário */
+      display: block;
+      background-color: #001f3f;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+  </style>
+  
+<script>
+    const cy = cytoscape({
+      container: document.getElementById('cy'),
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'background-color': '#00aaff',
+            'label': 'data(label)',
+            'color': '#fff',
+            'text-valign': 'center',
+            'text-halign': 'center',
+          }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 2,
+            'line-color': '#ccc',
+            'target-arrow-color': '#ccc',
+            'target-arrow-shape': 'triangle',
+            'curve-style': 'bezier'
+          }
+        }
+      ],
+      elements: [
+        { data: { id: 'MCDA', label: 'MCDA' } },
+        { data: { id: 'FIT', label: 'FITradeoff' } },
+        { data: { source: 'MCDA', target: 'FIT' } }
+      ],
+      layout: {
+        name: 'cose'
+      }
+    });
+  </script>  
 
 <section class="section" id="contato">
     <h1>📬 Fale Comigo</h1>
