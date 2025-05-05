@@ -266,52 +266,104 @@
         </div>
     </div>
 </section>
+
+<section class="section" id="grafosection">
+    <h1>🌐 Áreas de Pesquisa Interligadas</h1>
+    <p>Este grafo mostra a relação entre os principais métodos que utilizo em minha trajetória profissional.</p>
+    <div id="cy"></div>
+</section>
+
 <style>
     #cy {
       width: 100%;
-      height: 500px; /* ajuste conforme necessário */
+      height: 500px;
       display: block;
       background-color: #001f3f;
       border-radius: 10px;
       margin: 0 auto;
+      min-height: 500px;
     }
   </style>
   
+<!-- Biblioteca Cytoscape.js -->
+<script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
+
+<!-- Script do grafo ampliado -->
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
     const cy = cytoscape({
-      container: document.getElementById('cy'),
+      container: document.getElementById("cy"),
       style: [
         {
-          selector: 'node',
+          selector: "node",
           style: {
-            'background-color': '#00aaff',
-            'label': 'data(label)',
-            'color': '#fff',
-            'text-valign': 'center',
-            'text-halign': 'center',
+            "background-color": "#00aaff",
+            "label": "data(label)",
+            "color": "#fff",
+            "text-outline-width": 2,
+            "text-outline-color": "#000",
+            "text-valign": "center",
+            "text-halign": "center",
+            "font-size": "14px",
+            "text-wrap": "wrap",
+            "width": 50,
+            "height": 50
           }
         },
         {
-          selector: 'edge',
+          selector: "edge",
           style: {
-            'width': 2,
-            'line-color': '#ccc',
-            'target-arrow-color': '#ccc',
-            'target-arrow-shape': 'triangle',
-            'curve-style': 'bezier'
+            "width": 2,
+            "line-color": "#ccc",
+            "target-arrow-color": "#ccc",
+            "target-arrow-shape": "triangle",
+            "curve-style": "bezier"
           }
         }
       ],
-      elements: [
-        { data: { id: 'MCDA', label: 'MCDA' } },
-        { data: { id: 'FIT', label: 'FITradeoff' } },
-        { data: { source: 'MCDA', target: 'FIT' } }
-      ],
+      elements: {
+        nodes: [
+          { data: { id: "po", label: "Pesquisa Operacional" } },
+          { data: { id: "mcda", label: "MCDA" } },
+          { data: { id: "dea", label: "DEA" } },
+          { data: { id: "fit", label: "FITradeoff" } },
+          { data: { id: "sustentabilidade", label: "Sustentabilidade" } },
+          { data: { id: "residuos", label: "Resíduos Sólidos" } },
+          { data: { id: "ergonomia", label: "Ergonomia" } },
+          { data: { id: "eventos", label: "Eventos Públicos" } },
+          { data: { id: "educacao", label: "Educação Inclusiva" } },
+          { data: { id: "carbono", label: "Créditos de Carbono" } },
+          { data: { id: "dados", label: "Ciência de Dados" } }
+        ],
+        edges: [
+          { data: { source: "po", target: "mcda" } },
+          { data: { source: "mcda", target: "dea" } },
+          { data: { source: "mcda", target: "fit" } },
+          { data: { source: "mcda", target: "carbono" } },
+          { data: { source: "fit", target: "carbono" } },
+          { data: { source: "po", target: "dados" } },
+          { data: { source: "po", target: "ergonomia" } },
+          { data: { source: "po", target: "residuos" } },
+          { data: { source: "dados", target: "sustentabilidade" } },
+          { data: { source: "sustentabilidade", target: "carbono" } },
+          { data: { source: "residuos", target: "sustentabilidade" } },
+          { data: { source: "ergonomia", target: "educacao" } },
+          { data: { source: "eventos", target: "ergonomia" } }
+        ]
+      },
       layout: {
-        name: 'cose'
+        name: "cose",
+        animate: true,
+        fit: true,
+        padding: 30
       }
     });
-  </script>  
+
+    cy.ready(() => {
+      cy.fit();
+    });
+  });
+</script>
 
 <section class="section" id="contato">
     <h1>📬 Fale Comigo</h1>
