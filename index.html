@@ -285,8 +285,11 @@
     }
   </style>
   
-<!-- Biblioteca Cytoscape.js -->
+<!-- Bibliotecas necessárias -->
 <script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css"/>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -302,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "text-outline-color": "#000",
           "text-valign": "center",
           "text-halign": "center",
-          "font-size": "14px",
+          "font-size": "13px",
           "background-color": "data(color)",
           "width": "data(size)",
           "height": "data(size)"
@@ -321,17 +324,20 @@ document.addEventListener("DOMContentLoaded", function () {
     ],
     elements: {
       nodes: [
-        { data: { id: "po", label: "Pesquisa Operacional", size: 60, color: "#0074D9" }},
-        { data: { id: "mcda", label: "MCDA", size: 55, color: "#0074D9" }},
-        { data: { id: "dea", label: "DEA", size: 50, color: "#0074D9" }},
-        { data: { id: "fit", label: "FITradeoff", size: 45, color: "#0074D9" }},
-        { data: { id: "sustentabilidade", label: "Sustentabilidade", size: 65, color: "#2ECC40" }},
-        { data: { id: "residuos", label: "Resíduos Sólidos", size: 45, color: "#2ECC40" }},
-        { data: { id: "ergonomia", label: "Ergonomia", size: 50, color: "#FF851B" }},
-        { data: { id: "eventos", label: "Eventos Públicos", size: 45, color: "#FF851B" }},
-        { data: { id: "educacao", label: "Educação Inclusiva", size: 45, color: "#FF851B" }},
-        { data: { id: "carbono", label: "Créditos de Carbono", size: 55, color: "#B10DC9" }},
-        { data: { id: "dados", label: "Ciência de Dados", size: 60, color: "#39CCCC" }}
+        { data: { id: "po", label: "Pesquisa Operacional", size: 60, color: "#0074D9", info: "Otimização e tomada de decisão baseada em modelos." }},
+        { data: { id: "mcda", label: "MCDA", size: 55, color: "#0074D9", info: "Métodos de decisão multicritério." }},
+        { data: { id: "dea", label: "DEA", size: 50, color: "#0074D9", info: "Análise Envoltória de Dados para eficiência." }},
+        { data: { id: "fit", label: "FITradeoff", size: 45, color: "#0074D9", info: "Método interativo para apoio à decisão." }},
+        { data: { id: "sustentabilidade", label: "Sustentabilidade", size: 65, color: "#2ECC40", info: "Pesquisas sobre desenvolvimento sustentável." }},
+        { data: { id: "residuos", label: "Resíduos Sólidos", size: 45, color: "#2ECC40", info: "Estudos sobre gestão de resíduos." }},
+        { data: { id: "ergonomia", label: "Ergonomia", size: 50, color: "#FF851B", info: "Análise de conforto e segurança no trabalho." }},
+        { data: { id: "eventos", label: "Eventos Públicos", size: 45, color: "#FF851B", info: "Planejamento de eventos em gestão pública." }},
+        { data: { id: "educacao", label: "Educação Inclusiva", size: 45, color: "#FF851B", info: "Metodologias inclusivas e ensino na Amazônia." }},
+        { data: { id: "carbono", label: "Créditos de Carbono", size: 55, color: "#B10DC9", info: "Mitigação climática e mercados regulados." }},
+        { data: { id: "dados", label: "Ciência de Dados", size: 60, color: "#39CCCC", info: "Análise e extração de insights com dados." }},
+        { data: { id: "premio_hackathon", label: "🏆 Hackathon SEBRAE", size: 40, color: "#FFD700", info: "Solução premiada em inovação e dados." }},
+        { data: { id: "premio_ccsa", label: "🥇 Melhor Artigo CCSA", size: 40, color: "#FFD700", info: "Reconhecimento por pesquisa em educação inclusiva." }},
+        { data: { id: "premio_mct", label: "🏅 Menção Honrosa MCTI", size: 40, color: "#FFD700", info: "Iniciação científica em destaque nacional." }}
       ],
       edges: [
         { data: { source: "po", target: "mcda" }},
@@ -346,7 +352,10 @@ document.addEventListener("DOMContentLoaded", function () {
         { data: { source: "sustentabilidade", target: "carbono" }},
         { data: { source: "residuos", target: "sustentabilidade" }},
         { data: { source: "ergonomia", target: "educacao" }},
-        { data: { source: "eventos", target: "ergonomia" }}
+        { data: { source: "eventos", target: "ergonomia" }},
+        { data: { source: "premio_hackathon", target: "dados" }},
+        { data: { source: "premio_ccsa", target: "educacao" }},
+        { data: { source: "premio_mct", target: "po" }}
       ]
     },
     layout: {
@@ -357,14 +366,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Exibe tooltip ao clicar no nó
-  cy.on("tap", "node", function(evt){
-    const node = evt.target;
-    alert("Área: " + node.data("label"));
+  cy.nodes().forEach(function (node) {
+    const ref = node.popperRef();
+    const tooltip = tippy(document.createElement("div"), {
+      getReferenceClientRect: ref.getBoundingClientRect,
+      trigger: "manual",
+      content: node.data("info"),
+      placement: "top",
+      hideOnClick: false,
+      arrow: true
+    });
+
+    node.on("mouseover", () => tooltip.show());
+    node.on("mouseout", () => tooltip.hide());
   });
 });
 </script>
-
 
 <section class="section" id="contato">
     <h1>📬 Fale Comigo</h1>

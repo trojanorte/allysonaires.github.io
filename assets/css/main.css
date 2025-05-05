@@ -179,4 +179,34 @@
     color: #ccc;
     margin-top: 60px;
   }
-  
+  @media (max-width: 768px) {
+    .habilidades-container,
+    .project-container,
+    .award-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .project-card, .award-card {
+        width: 90% !important;
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #cy {
+        height: 350px;
+    }
+}
+#cy {
+    overflow-x: auto;
+    touch-action: pan-x pan-y;
+}
