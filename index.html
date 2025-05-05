@@ -335,9 +335,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { data: { id: "educacao", label: "Educação Inclusiva", size: 45, color: "#FF851B", info: "Metodologias inclusivas e ensino na Amazônia." }},
         { data: { id: "carbono", label: "Créditos de Carbono", size: 55, color: "#B10DC9", info: "Mitigação climática e mercados regulados." }},
         { data: { id: "dados", label: "Ciência de Dados", size: 60, color: "#39CCCC", info: "Análise e extração de insights com dados." }},
-        { data: { id: "premio_hackathon", label: "🏆 Hackathon SEBRAE", size: 40, color: "#FFD700", info: "Solução premiada em inovação e dados." }},
-        { data: { id: "premio_ccsa", label: "🥇 Melhor Artigo CCSA", size: 40, color: "#FFD700", info: "Reconhecimento por pesquisa em educação inclusiva." }},
-        { data: { id: "premio_mct", label: "🏅 Menção Honrosa MCTI", size: 40, color: "#FFD700", info: "Iniciação científica em destaque nacional." }}
       ],
       edges: [
         { data: { source: "po", target: "mcda" }},
@@ -353,9 +350,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { data: { source: "residuos", target: "sustentabilidade" }},
         { data: { source: "ergonomia", target: "educacao" }},
         { data: { source: "eventos", target: "ergonomia" }},
-        { data: { source: "premio_hackathon", target: "dados" }},
-        { data: { source: "premio_ccsa", target: "educacao" }},
-        { data: { source: "premio_mct", target: "po" }}
       ]
     },
     layout: {
