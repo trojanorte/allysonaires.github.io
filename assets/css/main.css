@@ -1,242 +1,523 @@
-
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #0a1f44, #004488);
-    color: white;
-    padding-top: 70px;
-  }
-  
-  .navbar {
-    background: rgba(0, 0, 0, 0.85);
-    padding: 15px 30px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #00aaff;
-  }
-  
-  .hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background: url('../images/gradient-bg.jpg') no-repeat center center;
-    background-size: cover;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .hero p {
-    font-size: 1.1rem;
-    color: #ccc;
-  }
-  
-  .section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-  }
-  
-  h1, h2, h3 {
-    margin-bottom: 15px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-  }
-  
-  p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #f0f0f0;
-  }
-  
-  p.justificado {
-    text-align: justify;
-  }
-  
-  .habilidades-container,
-  .project-container,
-  .award-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .card,
-  .project-card,
-  .award-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 12px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover,
-  .project-card:hover,
-  .award-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  section.section + section.section {
-    margin-top: 80px;
-  }
-  
-  .project-link {
-    color: #00aaff;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .project-link:hover {
-    text-decoration: underline;
-  }
-  
-  .icon-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-  }
-  
-  .icon-container a {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .icon-container i {
-    font-size: 2rem;
-  }
-  
-  .icon-container a:hover i {
-    color: #00aaff;
-  }
-  
-  #cy {
-    width: 100%;
-    height: 500px;
-    display: block;
-    background-color: #001f3f;
-    border-radius: 10px;
-    margin-top: 30px;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-top: 60px;
-  }
-  @media (max-width: 768px) {
-    .habilidades-container,
-    .project-container,
-    .award-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card, .project-card, .award-card {
-        width: 90% !important;
-        margin-bottom: 20px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-links {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    #cy {
-        height: 350px;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#cy {
-    overflow-x: auto;
-    touch-action: pan-x pan-y;
+
+/* Compensa o menu fixo quando clica nas âncoras */
+section {
+  scroll-margin-top: 80px;
 }
-.habilidades-container {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+
+/* Corpo */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #0a1f44, #004488);
+  color: white;
+  padding-top: 60px; /* compensa navbar fixa */
+}
+
+/* Tipografia geral */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.section h1 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin: 28px 0 14px;
+}
+
+p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #e5eeff;
+}
+
+p.justificado {
+  text-align: justify;
+}
+
+.section p strong {
+  font-weight: 600; /* um pouco menos pesado que o padrão */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left strong {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00aaff;
+}
+
+/* Botão de CV (se usar) */
+.cv-button {
+  background: none;
+  border: 2px solid #00aaff;
+  color: #00aaff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cv-button:hover {
+  background: #00aaff;
+  color: white;
+}
+
+/* ===== HERO COM FUNDO ANIMADO ===== */
+.hero {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10%;
+  text-align: left;
+
+  /* “imagem” gerada por gradiente animado */
+  background-image: radial-gradient(circle at 0% 0%, #1d4ed8, #020617 40%, #0369a1);
+  background-size: 220% 220%;
+  animation: heroGradient 18s ease-in-out infinite alternate;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* camada de leve escurecimento pra dar contraste no texto */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.85), transparent 55%)
+              ,linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.3));
+  pointer-events: none;
+}
+
+/* um “blob” suave se mexendo no fundo */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35), transparent 60%);
+  filter: blur(4px);
+  right: -120px;
+  bottom: -180px;
+  animation: heroBlob 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  animation: heroFade 0.8s ease-out 0.15s both;
+}
+
+/* animação de entrada do hero */
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-  section h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-weight: bold;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  section h2 i {
-    margin-right: 10px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 10px 0;
+  text-transform: none;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #cdd9ff;
+  margin-bottom: 20px;
+}
+
+.hero-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.hero-social a {
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.hero-social a:hover {
+  color: #00aaff;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ===== SEÇÕES GENÉRICAS ===== */
+.section {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 32px 32px 36px;
+  background: radial-gradient(circle at top left,
+              rgba(255, 255, 255, 0.16),
+              transparent)
+              rgba(4, 20, 50, 0.92);
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Habilidades, projetos simples, prêmios */
+.habilidades-container,
+.project-container,
+.award-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.card,
+.project-card,
+.award-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 20px 18px;
+  border-radius: 14px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.project-card:hover,
+.award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.5);
+}
+
+.card h3,
+.project-card h3,
+.award-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.card p,
+.project-card p,
+.award-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Ícones de contato */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.icon-container a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.icon-container i {
+  font-size: 2rem;
+  transition: 0.3s;
+  margin-bottom: 4px;
+}
+
+.icon-container a:hover i {
+  color: #00aaff;
+}
+
+/* ===== PORTFÓLIO ELEGANTE ===== */
+.section-portfolio h1 {
+  text-align: left;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.portfolio-card {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 40px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.portfolio-media {
+  flex: 0 0 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagem circular animada */
+.portfolio-image-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* Borda animada (tipo neon girando) */
+.portfolio-image-circle::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ff6ec4,
+    #7873f5,
+    #00c9ff,
+    #ff6ec4
+  );
+  z-index: 0;
+  animation: spin-border 18s linear infinite;
+}
+
+/* “Máscara” para deixar só a borda aparecendo */
+.portfolio-image-circle::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #050509;
+  z-index: 1;
+}
+
+/* Imagem flutuando levemente */
+.portfolio-image-circle img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+/* Imagem circular animada (sem usar arquivos de imagem) */
+.portfolio-image-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Borda animada (tipo neon girando) */
+.portfolio-image-circle::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #ff6ec4,
+    #7873f5,
+    #00c9ff,
+    #ff6ec4
+  );
+  z-index: 0;
+  animation: spin-border 18s linear infinite;
+}
+
+/* Fundo interno genérico (cada projeto ganha uma variação abaixo) */
+.portfolio-image-circle::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  z-index: 1;
+  background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
+}
+
+/* Ícone central */
+.portfolio-symbol {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #ffffff;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Variações de cor por projeto */
+.circle-analytics::after {
+  background: radial-gradient(circle at 30% 20%, #1e40af, #020617);
+}
+
+.circle-terra::after {
+  background: radial-gradient(circle at 30% 20%, #059669, #022c22);
+}
+
+.circle-kpi::after {
+  background: radial-gradient(circle at 30% 20%, #f97316, #111827);
+}
+
+.circle-ia::after {
+  background: radial-gradient(circle at 30% 20%, #a855f7, #18181b);
+}
+
+.circle-event::after {
+  background: radial-gradient(circle at 30% 20%, #facc15, #78350f);
+}
+
+/* Animações */
+@keyframes spin-border {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  /* Bases da seção Pacotes & Libs */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Leve “zoom” no hover do card inteiro */
+.portfolio-card:hover .portfolio-symbol {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Títulos e texto dentro do card de portfólio */
+.portfolio-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+.portfolio-content p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+/* Botão do portfólio */
+.btn-portfolio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #ff007a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-portfolio i {
+  font-size: 0.9rem;
+}
+
+.btn-portfolio:hover {
+  background: #ff3395;
+  color: #fff;
+}
+
+/* ===== PACOTES & LIBS ===== */
 .badges {
   display:flex;
   gap:10px;
   flex-wrap:wrap;
   margin:10px 0 14px;
 }
-.badges img { height:22px; }
+
+.badges img {
+  height:22px;
+}
 
 .install-box {
   display:flex;
@@ -248,11 +529,13 @@
   border-radius:8px;
   margin:8px 0 14px;
 }
+
 .install-box code {
   user-select: all;
   font-family: ui-monospace, Menlo, Consolas, monospace;
   font-size: 14px;
 }
+
 .copy-btn {
   background: none;
   border:1px solid #00aaff;
@@ -262,6 +545,7 @@
   cursor:pointer;
   font-weight:600;
 }
+
 .copy-btn:hover {
   background:#00aaff;
   color:#001f3f;
@@ -271,4 +555,172 @@
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap:10px;
+}
+
+/* ===== GRAFO (CYTOSCAPE) ===== */
+#grafosection #cy {
+  width: 100%;
+  height: 500px;
+  display: block;
+  background-color: #001f3f;
+  border-radius: 10px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 40px;
+}
+
+/* ===== BOTÃO DIA/NOITE ===== */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1001;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffffee;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+}
+
+/* ===== TEMA CLARO ===== */
+body.light-mode {
+  background: linear-gradient(to right, #f0f3ff, #ffffff);
+  color: #222;
+}
+
+body.light-mode .navbar {
+  background: linear-gradient(to right, #f3f6ff, #e4ecff);
+  color: #222;
+}
+
+
+body.light-mode .navbar-left strong {
+  color: #222;
+}
+
+body.light-mode .navbar a {
+  color: #222;
+}
+
+body.light-mode .navbar a:hover {
+  color: #004488;
+}
+
+body.light-mode .section {
+  background: #ffffff;
+  color: #222;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+body.light-mode p {
+  color: #333c54;
+}
+
+/* >>> AQUI entra o ajuste dos títulos <<< */
+body.light-mode .section h1,
+body.light-mode .section h2,
+body.light-mode .section h3,
+body.light-mode .portfolio-content h3,
+body.light-mode .card h3,
+body.light-mode .project-card h3,
+body.light-mode .award-card h3 {
+  color: #111827;
+}
+
+body.light-mode .icon-container a {
+  color: #222;
+}
+
+body.light-mode .icon-container a:hover i {
+  color: #004488;
+}
+
+body.light-mode .portfolio-card {
+  background: #ffffff;
+  color: #222;
+}
+
+body.light-mode .theme-toggle {
+  background: #111;
+  color: #f5f5f5;
+}
+
+/* ===== ANIMAÇÃO REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .hero {
+    padding: 0 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 26px 20px;
+  }
+
+  .portfolio-card:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .habilidades-container,
+  .project-container,
+  .award-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .project-card,
+  .award-card {
+    width: 90% !important;
+    margin-bottom: 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    margin-top: 8px;
+  }
+
+  #grafosection #cy {
+    height: 350px;
+  }
 }

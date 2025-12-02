@@ -1,449 +1,548 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allyson Aires - Portfólio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #0a1f44, #004488);
-            color: white;
-        }
-        .navbar {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .navbar a:hover {
-            color: #00aaff;
-        }
-        .cv-button {
-            background: none;
-            border: 2px solid #00aaff;
-            color: #00aaff;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .cv-button:hover {
-            background: #00aaff;
-            color: white;
-        }
-        .hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: url('assets/images/gradient-bg.jpg') no-repeat center center;
-            background-size: cover;
-        }
-        .hero h1 {
-            font-size: 36px;
-            margin: 10px 0;
-            text-transform: uppercase;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #ddd;
-        }
-        .section {
-            max-width: 1000px;
-            margin: 60px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .icon-container a {
-            text-decoration: none;
-            color: white;
-            font-size: 22px;
-            text-align: center;
-        }
-        .icon-container i {
-            font-size: 40px;
-            transition: 0.3s;
-        }
-        .icon-container a:hover i {
-            color: #00aaff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allyson Aires - Portfólio</title>
+
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Estilos do Tippy (tooltips do grafo) -->
+  <link rel="stylesheet"
+        href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css"/>
+
+  <!-- Seu CSS principal -->
+  <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-left">
-            <strong>Allyson Aires</strong>
-        </div>
-        <div class="navbar-links">
-            <a href="#sobre">Sobre</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#premios">Prêmios e Reconhecimentos</a>
-            <a href="#contato">Contato</a>
-        </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <strong>Allyson Aires</strong>
     </div>
-
-
-    <div class="hero">
-        <h1>Bem-vindo ao meu Portfólio</h1>
-        <p>Engenheiro de Produção | Ciência de Dados | Otimização de Processos</p>
+    <div class="navbar-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#premios">Prêmios e Reconhecimentos</a>
+      <a href="#contato">Contato</a>
     </div>
+  </div>
 
-   <!-- Seções do Site -->
-   <section class="section" id="sobre">
-    <h1>Sobre Mim</h1>
-    <p class="justificado">
-        Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong> e <strong>Engenharia de Dados</strong>. Minha experiência inclui <strong>análise e manipulação de dados, otimização de processos e suporte à tomada de decisão</strong>, aplicando modelos matemáticos e ferramentas de inteligência analítica para soluções estratégicas.
-    </p>
-    <p class="justificado">
-        Atualmente, atuo no <strong>Tribunal de Justiça do Rio Grande do Norte (TJRN)</strong>, desenvolvendo <strong>dashboards interativos</strong> e <strong>relatórios estratégicos</strong> utilizando <strong>Excel e Power BI</strong>, otimizando a gestão e visualização de dados. Minha abordagem combina <strong>tecnologia, ciência de dados e análise de processos</strong> para impulsionar a eficiência e inovação organizacional.
-    </p>
-   </section>
+  <!-- BOTÃO TEMA -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
-   <section id="habilidades">
-        <h1>Habilidades</h1>
-    
-        <!-- Habilidades em Tecnologia -->
-        <h2><i class="fas fa-laptop-code"></i> Habilidades em Tecnologia</h2>
-        <div class="habilidades-container">
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Análise e Visualização de Dados</h3>
-                <p>Excel, Power BI, Pandas</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>Linguagens de Programação</h3>
-                <p>Python (Pandas, NumPy), Web Scraping (Selenium)</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-database"></i>
-                <h3>Banco de Dados</h3>
-                <p>SQL</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-cogs"></i>
-                <h3>Engenharia de Dados</h3>
-                <p>ETL, Web Scraping, Automação</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Estatística e Modelagem de Dados</h3>
-            </div>
-        </div>
-    
-        <!-- Habilidades em Engenharia -->
-        <h2><i class="fas fa-hard-hat"></i> Habilidades em Engenharia</h2>
-        <div class="habilidades-container">
-            <div class="card">
-                <i class="fas fa-calculator"></i>
-                <h3>Pesquisa Operacional</h3>
-                <p>Modelagem matemática e otimização de processos</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-tasks"></i>
-                <h3>Gestão de Projetos</h3>
-                <p>Metodologias ágeis (Scrum, Kanban)</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-industry"></i>
-                <h3>Gestão de Processos</h3>
-                <p>Otimização para produtividade e eficiência operacional</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-balance-scale"></i>
-                <h3>Tomada de Decisão</h3>
-                <p>Multicritério para problemas complexos</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-truck"></i>
-                <h3>Logística e Cadeia de Suprimentos</h3>
-                <p>Análise de fluxos, previsão de demanda e gestão de estoques</p>
-            </div>
-        </div>
-   </section>
-   <section id="projetos">
-     <h1>Projetos</h1>
-
-    <div class="project-container">
-        <!-- Projeto 1 -->
-        <div class="project-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>GLOBE Research Dashboard</h3>
-            <p>
-                Desenvolvimento de um dashboard interativo para análise de pesquisas acadêmicas, 
-                utilizando Streamlit, Pandas e Web Scraping com Selenium.
-            </p>
-            <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/" 
-               target="_blank" 
-               class="project-link">Acessar Projeto</a>
-        </div>
-
-        <!-- Projeto 2 -->
-        <div class="project-card">
-            <i class="fas fa-globe"></i>
-            <h3>Portfólio Pessoal</h3>
-            <p>
-                Meu site pessoal onde apresento meus projetos, habilidades e experiências profissionais.
-            </p>
-            <a href="https://allysonaires.github.io/" 
-               target="_blank" 
-               class="project-link">Visitar Portfólio</a>
-        </div>
-    
-        <!-- Projeto 3 -->
-        <div class="project-card">
-            <i class="fas fa-balance-scale"></i>
-            <h3>Tribunal de Justiça do RN</h3>
-            <p>
-                Criação de dashboards interativos para otimizar a visualização de indicadores estratégicos.
-            </p>
-        </div>
-    
-        <!-- Projeto 4 -->
-        <div class="project-card">
-            <i class="fas fa-tree"></i>
-            <h3>Luzes do Potengi</h3>
-            <p>
-                Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais e uma 
-                atmosfera festiva. Fiz parte da criação e estruturação do evento, ajudando no planejamento 
-                das atrações, organização e mobilização da comunidade.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="premios">
-    <h1>🏆 Prêmios e Reconhecimentos</h1>
-
-    <div class="award-container">
-        <div class="award-card">
-            <i class="fas fa-trophy"></i>
-            <h3>3º Lugar no Prêmio Inovação e Tecnologia - 2024</h3>
-            <p>Recebi o 3º lugar no Hackathon Parnamirim/RN, promovido pelo SEBRAE RN, por desenvolver uma solução inovadora em tecnologia e empreendedorismo.</p>
-        </div>
-
-        <div class="award-card">
-            <i class="fas fa-award"></i>
-            <h3>Certificado de Melhores Artigos - 2024</h3>
-            <p>Trabalho premiado no 26º Seminário de Pesquisa do CCSA pelo artigo "Educação na Amazônia Ocidental: O Papel das Universidades Públicas, Políticas Educacionais e Metodologias Ativas na Inclusão de Crianças Neuroatípicas".</p>
-        </div>
-
-        <div class="award-card">
-            <i class="fas fa-medal"></i>
-            <h3>Menção Honrosa - 2010</h3>
-            <p>Reconhecimento do Ministério da Ciência e Tecnologia e da Educação pela participação destacada em pesquisa e inovação.</p>
-        </div>
-    </div>
-</section>
-<!-- PACOTES -->
-<section id="pacotes" class="section">
-  <h1>📦 Pacotes & Libs</h1>
-  <div class="project-container">
-    <div class="project-card">
-      <i class="fa-brands fa-python"></i>
-      <h3>OpenDEA-Allys (PyPI)</h3>
-      <p>
-        Biblioteca Python para análises de eficiência via DEA com foco didático e aplicação prática.
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Allyson Aires</h1>
+      <p class="hero-subtitle">
+        Engenheiro de Produção · Ciência de Dados · Pesquisa Operacional
       </p>
-
-      <!-- Badges -->
-      <div class="badges">
-        <img alt="PyPI" src="https://img.shields.io/pypi/v/opendea-allys?label=PyPI&logo=pypi" />
-        <img alt="Python versions" src="https://img.shields.io/pypi/pyversions/opendea-allys" />
-        <img alt="License" src="https://img.shields.io/pypi/l/opendea-allys" />
-      </div>
-
-      <!-- Install box -->
-      <div class="install-box">
-        <code id="pip-cmd">pip install opendea-allys</code>
-        <button class="copy-btn" data-copy="#pip-cmd">
-          <i class="fa-regular fa-copy"></i> Copiar
-        </button>
-      </div>
-
-      <!-- Links -->
-      <div class="links-grid">
-        <a class="project-link" target="_blank" rel="noopener"
-           href="https://pypi.org/project/opendea-allys/">Ver no PyPI</a>
+      <div class="hero-social">
+        <a href="mailto:allysonaires@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/trojanorte" target="_blank" rel="noopener" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/allyson-aires-a6a432122/"
+           target="_blank" rel="noopener" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8525895Y4"
+           target="_blank" rel="noopener" title="Lattes">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="https://scholar.google.com.br/citations?user=dTlBgHcAAAAJ"
+           target="_blank" rel="noopener" title="Google Scholar">
+          <i class="fas fa-book"></i>
+        </a>
+        <a href="https://www.researchgate.net/profile/Allyson-Aires"
+           target="_blank" rel="noopener" title="ResearchGate">
+          <i class="fas fa-flask"></i>
+        </a>
       </div>
     </div>
   </div>
+
+  <section class="section reveal" id="sobre">
+  <h1>Sobre Mim</h1>
+  <p class="justificado">
+    Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de
+    Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong>,
+    <strong>Ciência de Dados</strong> e <strong>Inteligência Artificial aplicada</strong>.
+    Minha atuação sempre esteve ligada a <strong>análise de dados, melhoria de processos
+    e apoio à decisão</strong> em ambientes reais.
+  </p>
+
+  <p class="justificado">
+    Tenho experiência como <strong>estagiário de pós-graduação em Engenharia de Produção
+    no Tribunal de Justiça do RN (TJRN)</strong>, onde trabalhei com mapeamento de processos,
+    construção de <strong>dashboards</strong> e automação de rotinas com <strong>Excel, Power BI
+    e Python</strong> para monitorar indicadores de desempenho.
+  </p>
+
+  <p class="justificado">
+    Atuei também como <strong>Assessor Técnico na Prefeitura Municipal de São Paulo do Potengi</strong>,
+    apoiando a gestão pública por meio de <strong>análises de dados, desenho de políticas e
+    padronização de procedimentos</strong>, e como <strong>Assistente Financeiro</strong> em empresa
+    privada, trabalhando com fluxo de caixa, previsão de demanda, vendas on-line e
+    organização de informações gerenciais.
+  </p>
+
+  <p class="justificado">
+    Hoje, busco oportunidades para aplicar essa combinação de
+    <strong>engenharia, finanças e dados</strong> em empresas que queiram
+    <strong>estruturar indicadores, automatizar análises e explorar IA generativa</strong>
+    para ganhar eficiência e tomar decisões com mais segurança.
+  </p>
 </section>
 
-<section class="section" id="grafosection">
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="section reveal">
+    <h1>Habilidades</h1>
+
+    <!-- Habilidades em Tecnologia -->
+    <h2><i class="fas fa-laptop-code"></i> Habilidades em Tecnologia</h2>
+    <div class="habilidades-container">
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Análise e Visualização de Dados</h3>
+        <p>Excel, Power BI, Pandas</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>Linguagens de Programação</h3>
+        <p>Python (Pandas, NumPy), Web Scraping (Selenium)</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Banco de Dados</h3>
+        <p>SQL</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-cogs"></i>
+        <h3>Engenharia de Dados</h3>
+        <p>ETL, Web Scraping, Automação</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-bar"></i>
+        <h3>Estatística e Modelagem de Dados</h3>
+      </div>
+    </div>
+
+    <!-- Habilidades em Engenharia -->
+    <h2><i class="fas fa-hard-hat"></i> Habilidades em Engenharia</h2>
+    <div class="habilidades-container">
+      <div class="card">
+        <i class="fas fa-calculator"></i>
+        <h3>Pesquisa Operacional</h3>
+        <p>Modelagem matemática e otimização de processos</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-tasks"></i>
+        <h3>Gestão de Projetos</h3>
+        <p>Metodologias ágeis (Scrum, Kanban)</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-industry"></i>
+        <h3>Gestão de Processos</h3>
+        <p>Otimização para produtividade e eficiência operacional</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Tomada de Decisão</h3>
+        <p>Multicritério para problemas complexos</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-truck"></i>
+        <h3>Logística e Cadeia de Suprimentos</h3>
+        <p>Análise de fluxos, previsão de demanda e gestão de estoques</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- PORTFÓLIO ELEGANTE -->
+<section id="projetos" class="section section-portfolio reveal">
+  <h1>Portfólio</h1>
+
+  <div class="portfolio-container">
+
+    <!-- Projeto 1: GLOBE Research Dashboard -->
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <div class="portfolio-image-circle circle-analytics">
+          <div class="portfolio-symbol">
+            <i class="fas fa-chart-line"></i>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-content">
+        <h3>GLOBE Research Dashboard</h3>
+        <p>
+          Desenvolvimento de dashboard interativo para análise de pesquisas acadêmicas,
+          utilizando <strong>Streamlit</strong>, <strong>Pandas</strong> e
+          <strong>Web Scraping (Selenium)</strong>, permitindo explorar temas, autores
+          e países em tempo real.
+        </p>
+        <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/"
+           target="_blank" rel="noopener" class="btn-portfolio">
+          Ver projeto <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Projeto 2: TerraVisor -->
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <div class="portfolio-image-circle circle-terra">
+          <div class="portfolio-symbol">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-content">
+        <h3>TerraVisor – Monitoramento Ambiental</h3>
+        <p>
+          Plataforma modular baseada em <strong>microsserviços</strong> para
+          <strong>monitoramento ambiental</strong> e apoio à tomada de decisão,
+          integrando dados geoespaciais e indicadores em visualizações acionáveis.
+        </p>
+        <a href="https://github.com/trojanorte"
+           target="_blank" rel="noopener" class="btn-portfolio">
+          Ver mais <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Projeto 3: Case de Indicadores & Dashboards – Gestão Operacional -->
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <div class="portfolio-image-circle circle-kpi">
+          <div class="portfolio-symbol">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-content">
+        <h3>Case – Indicadores e Dashboards para Gestão Operacional</h3>
+        <p>
+          Desenvolvimento de <strong>painéis de indicadores</strong> e relatórios gerenciais
+          para acompanhar <strong>produtividade, prazos, qualidade e metas</strong> em equipes
+          e processos. Envolve definição de <strong>KPIs</strong>, integração de dados de
+          diferentes fontes e criação de visualizações em <strong>Power BI</strong>, com
+          automações em <strong>Excel e Python</strong>.
+        </p>
+        <a href="#contato" class="btn-portfolio">
+          Saber detalhes do case <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Projeto 4: IA para apoio à decisão – ENEGEP 2025 -->
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <div class="portfolio-image-circle circle-ia">
+          <div class="portfolio-symbol">
+            <i class="fas fa-brain"></i>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-content">
+        <h3>IA para Escolha de Ações – ENEGEP 2025</h3>
+        <p>
+          Artigo científico publicado no <strong>ENEGEP 2025</strong> em que desenvolvi um
+          <strong>modelo de apoio à decisão</strong> combinando
+          <strong>métodos multicritério</strong> e <strong>Inteligência Artificial</strong>
+          para <strong>priorizar ações de melhoria</strong> em um contexto real.
+        </p>
+        <a href="https://www.abepro.org.br/publicacoes/artigo.asp?e=enegep&a=2025&c=51276"
+           target="_blank" rel="noopener" class="btn-portfolio">
+          Ver artigo <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+    <!-- Projeto 5: Luzes do Potengi -->
+    <article class="portfolio-card">
+      <div class="portfolio-media">
+        <div class="portfolio-image-circle circle-event">
+          <div class="portfolio-symbol">
+            <i class="fas fa-tree"></i>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-content">
+        <h3>Luzes do Potengi</h3>
+        <p>
+          Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais
+          e uma atmosfera festiva. Atuação na estruturação, organização e mobilização da comunidade,
+          conectando gestão de projetos, logística e impacto social.
+        </p>
+        <a href="#contato" class="btn-portfolio">
+          Saber mais <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+  <!-- PRÊMIOS -->
+  <section id="premios" class="section reveal">
+    <h1>🏆 Prêmios e Reconhecimentos</h1>
+
+    <div class="award-container">
+      <div class="award-card">
+        <i class="fas fa-trophy"></i>
+        <h3>3º Lugar no Prêmio Inovação e Tecnologia - 2024</h3>
+        <p>3º lugar no Hackathon Parnamirim/RN, promovido pelo SEBRAE RN, com solução em tecnologia e empreendedorismo.</p>
+      </div>
+
+      <div class="award-card">
+        <i class="fas fa-award"></i>
+        <h3>Certificado de Melhores Artigos - 2024</h3>
+        <p>Trabalho premiado no 26º Seminário de Pesquisa do CCSA pelo artigo sobre educação na Amazônia Ocidental e inclusão de crianças neuroatípicas.</p>
+      </div>
+
+      <div class="award-card">
+        <i class="fas fa-medal"></i>
+        <h3>Menção Honrosa - 2010</h3>
+        <p>Reconhecimento do Ministério da Ciência e Tecnologia e da Educação pela participação destacada em pesquisa e inovação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACOTES & LIBS -->
+  <section id="pacotes" class="section reveal">
+    <h1>📦 Pacotes & Libs</h1>
+    <div class="project-container">
+      <div class="project-card">
+        <i class="fa-brands fa-python"></i>
+        <h3>OpenDEA-Allys (PyPI)</h3>
+        <p>
+          Biblioteca Python para análises de eficiência via DEA com foco didático e aplicação prática.
+        </p>
+
+        <!-- Badges -->
+        <div class="badges">
+          <img alt="PyPI" src="https://img.shields.io/pypi/v/opendea-allys?label=PyPI&logo=pypi" />
+          <img alt="Python versions" src="https://img.shields.io/pypi/pyversions/opendea-allys" />
+          <img alt="License" src="https://img.shields.io/pypi/l/opendea-allys" />
+        </div>
+
+        <!-- Install box -->
+        <div class="install-box">
+          <code id="pip-cmd">pip install opendea-allys</code>
+          <button class="copy-btn" data-copy="#pip-cmd">
+            <i class="fa-regular fa-copy"></i> Copiar
+          </button>
+        </div>
+
+        <!-- Links -->
+        <div class="links-grid">
+          <a class="project-link" target="_blank" rel="noopener"
+             href="https://pypi.org/project/opendea-allys/">Ver no PyPI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAFO -->
+  <section class="section reveal" id="grafosection">
     <h1>🌐 Áreas de Pesquisa Interligadas</h1>
     <p>Este grafo mostra a relação entre os principais métodos que utilizo em minha trajetória profissional.</p>
     <div id="cy"></div>
-</section>
+  </section>
 
-<style>
-    #cy {
-      width: 100%;
-      height: 500px;
-      display: block;
-      background-color: #001f3f;
-      border-radius: 10px;
-      margin: 0 auto;
-      min-height: 500px;
-    }
-  </style>
-  
-<!-- Bibliotecas necessárias -->
-<script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
-<script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css"/>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const cy = cytoscape({
-    container: document.getElementById("cy"),
-    style: [
-      {
-        selector: "node",
-        style: {
-          "label": "data(label)",
-          "color": "#fff",
-          "text-outline-width": 2,
-          "text-outline-color": "#000",
-          "text-valign": "center",
-          "text-halign": "center",
-          "font-size": "13px",
-          "background-color": "data(color)",
-          "width": "data(size)",
-          "height": "data(size)"
-        }
-      },
-      {
-        selector: "edge",
-        style: {
-          "width": 2,
-          "line-color": "#ccc",
-          "target-arrow-color": "#ccc",
-          "target-arrow-shape": "triangle",
-          "curve-style": "bezier"
-        }
-      }
-    ],
-    elements: {
-      nodes: [
-        { data: { id: "po", label: "Pesquisa Operacional", size: 60, color: "#0074D9", info: "Otimização e tomada de decisão baseada em modelos." }},
-        { data: { id: "mcda", label: "MCDA", size: 55, color: "#0074D9", info: "Métodos de decisão multicritério." }},
-        { data: { id: "dea", label: "DEA", size: 50, color: "#0074D9", info: "Análise Envoltória de Dados para eficiência." }},
-        { data: { id: "fit", label: "FITradeoff", size: 45, color: "#0074D9", info: "Método interativo para apoio à decisão." }},
-        { data: { id: "sustentabilidade", label: "Sustentabilidade", size: 65, color: "#2ECC40", info: "Pesquisas sobre desenvolvimento sustentável." }},
-        { data: { id: "residuos", label: "Resíduos Sólidos", size: 45, color: "#2ECC40", info: "Estudos sobre gestão de resíduos." }},
-        { data: { id: "ergonomia", label: "Ergonomia", size: 50, color: "#FF851B", info: "Análise de conforto e segurança no trabalho." }},
-        { data: { id: "eventos", label: "Eventos Públicos", size: 45, color: "#FF851B", info: "Planejamento de eventos em gestão pública." }},
-        { data: { id: "educacao", label: "Educação Inclusiva", size: 45, color: "#FF851B", info: "Metodologias inclusivas e ensino na Amazônia." }},
-        { data: { id: "carbono", label: "Créditos de Carbono", size: 55, color: "#B10DC9", info: "Mitigação climática e mercados regulados." }},
-        { data: { id: "dados", label: "Ciência de Dados", size: 60, color: "#39CCCC", info: "Análise e extração de insights com dados." }},
-      ],
-      edges: [
-        { data: { source: "po", target: "mcda" }},
-        { data: { source: "mcda", target: "dea" }},
-        { data: { source: "mcda", target: "fit" }},
-        { data: { source: "mcda", target: "carbono" }},
-        { data: { source: "fit", target: "carbono" }},
-        { data: { source: "po", target: "dados" }},
-        { data: { source: "po", target: "ergonomia" }},
-        { data: { source: "po", target: "residuos" }},
-        { data: { source: "dados", target: "sustentabilidade" }},
-        { data: { source: "sustentabilidade", target: "carbono" }},
-        { data: { source: "residuos", target: "sustentabilidade" }},
-        { data: { source: "ergonomia", target: "educacao" }},
-        { data: { source: "eventos", target: "ergonomia" }},
-      ]
-    },
-    layout: {
-      name: "cose",
-      animate: true,
-      fit: true,
-      padding: 30
-    }
-  });
-
-  cy.nodes().forEach(function (node) {
-    const ref = node.popperRef();
-    const tooltip = tippy(document.createElement("div"), {
-      getReferenceClientRect: ref.getBoundingClientRect,
-      trigger: "manual",
-      content: node.data("info"),
-      placement: "top",
-      hideOnClick: false,
-      arrow: true
-    });
-
-    node.on("mouseover", () => tooltip.show());
-    node.on("mouseout", () => tooltip.hide());
-  });
-});
-</script>
-
-<section class="section" id="contato">
+  <!-- CONTATO -->
+  <section class="section reveal" id="contato">
     <h1>📬 Fale Comigo</h1>
     <p style="text-align: center;">Entre em contato ou acesse meus perfis profissionais e acadêmicos:</p>
 
     <div class="icon-container">
-        <a href="mailto:allysonaires@gmail.com" target="_blank" rel="noopener" title="Enviar Email">
-            <i class="fas fa-envelope"></i>
-            <p>Email</p>
-        </a>
-        <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8525895Y4" target="_blank" rel="noopener" title="Currículo Lattes">
-            <i class="fas fa-graduation-cap"></i>
-            <p>Lattes</p>
-        </a>
-        <a href="https://scholar.google.com.br/citations?user=dTlBgHcAAAAJ" target="_blank" rel="noopener" title="Google Scholar">
-            <i class="fas fa-book"></i>
-            <p>Scholar</p>
-        </a>
-        <a href="https://www.researchgate.net/profile/Allyson-Aires" target="_blank" rel="noopener" title="ResearchGate">
-            <i class="fas fa-flask"></i>
-            <p>ResearchGate</p>
-        </a>
-        <a href="https://github.com/trojanorte" target="_blank" rel="noopener" title="GitHub">
-            <i class="fab fa-github"></i>
-            <p>GitHub</p>
-        </a>
-        <a href="https://www.linkedin.com/in/allyson-aires-a6a432122/" target="_blank" rel="noopener" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-            <p>LinkedIn</p>
-        </a>
+      <a href="mailto:allysonaires@gmail.com" target="_blank" rel="noopener" title="Enviar Email">
+        <i class="fas fa-envelope"></i>
+        <p>Email</p>
+      </a>
+      <a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8525895Y4"
+         target="_blank" rel="noopener" title="Currículo Lattes">
+        <i class="fas fa-graduation-cap"></i>
+        <p>Lattes</p>
+      </a>
+      <a href="https://scholar.google.com.br/citations?user=dTlBgHcAAAAJ"
+         target="_blank" rel="noopener" title="Google Scholar">
+        <i class="fas fa-book"></i>
+        <p>Scholar</p>
+      </a>
+      <a href="https://www.researchgate.net/profile/Allyson-Aires"
+         target="_blank" rel="noopener" title="ResearchGate">
+        <i class="fas fa-flask"></i>
+        <p>ResearchGate</p>
+      </a>
+      <a href="https://github.com/trojanorte" target="_blank" rel="noopener" title="GitHub">
+        <i class="fab fa-github"></i>
+        <p>GitHub</p>
+      </a>
+      <a href="https://www.linkedin.com/in/allyson-aires-a6a432122/"
+         target="_blank" rel="noopener" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+        <p>LinkedIn</p>
+      </a>
     </div>
-</section>
+  </section>
 
-
-<footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <p>© 2024 Allyson Aires Pimentel da Silva. Todos os direitos reservados.</p>
-</footer>
+  </footer>
+
+  <!-- SCRIPTS: Cytoscape, Popper, Tippy -->
+  <script src="https://unpkg.com/cytoscape@3.21.1/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+
+  <!-- Script do grafo -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cy = cytoscape({
+        container: document.getElementById("cy"),
+        style: [
+          {
+            selector: "node",
+            style: {
+              "label": "data(label)",
+              "color": "#fff",
+              "text-outline-width": 2,
+              "text-outline-color": "#000",
+              "text-valign": "center",
+              "text-halign": "center",
+              "font-size": "13px",
+              "background-color": "data(color)",
+              "width": "data(size)",
+              "height": "data(size)"
+            }
+          },
+          {
+            selector: "edge",
+            style: {
+              "width": 2,
+              "line-color": "#ccc",
+              "target-arrow-color": "#ccc",
+              "target-arrow-shape": "triangle",
+              "curve-style": "bezier"
+            }
+          }
+        ],
+        elements: {
+          nodes: [
+            { data: { id: "po", label: "Pesquisa Operacional", size: 60, color: "#0074D9", info: "Otimização e tomada de decisão baseada em modelos." }},
+            { data: { id: "mcda", label: "MCDA", size: 55, color: "#0074D9", info: "Métodos de decisão multicritério." }},
+            { data: { id: "dea", label: "DEA", size: 50, color: "#0074D9", info: "Análise Envoltória de Dados para eficiência." }},
+            { data: { id: "fit", label: "FITradeoff", size: 45, color: "#0074D9", info: "Método interativo para apoio à decisão." }},
+            { data: { id: "sustentabilidade", label: "Sustentabilidade", size: 65, color: "#2ECC40", info: "Pesquisas sobre desenvolvimento sustentável." }},
+            { data: { id: "residuos", label: "Resíduos Sólidos", size: 45, color: "#2ECC40", info: "Estudos sobre gestão de resíduos." }},
+            { data: { id: "ergonomia", label: "Ergonomia", size: 50, color: "#FF851B", info: "Análise de conforto e segurança no trabalho." }},
+            { data: { id: "eventos", label: "Eventos Públicos", size: 45, color: "#FF851B", info: "Planejamento de eventos em gestão pública." }},
+            { data: { id: "educacao", label: "Educação Inclusiva", size: 45, color: "#FF851B", info: "Metodologias inclusivas e ensino na Amazônia." }},
+            { data: { id: "carbono", label: "Créditos de Carbono", size: 55, color: "#B10DC9", info: "Mitigação climática e mercados regulados." }},
+            { data: { id: "dados", label: "Ciência de Dados", size: 60, color: "#39CCCC", info: "Análise e extração de insights com dados." }},
+          ],
+          edges: [
+            { data: { source: "po", target: "mcda" }},
+            { data: { source: "mcda", target: "dea" }},
+            { data: { source: "mcda", target: "fit" }},
+            { data: { source: "mcda", target: "carbono" }},
+            { data: { source: "fit", target: "carbono" }},
+            { data: { source: "po", target: "dados" }},
+            { data: { source: "po", target: "ergonomia" }},
+            { data: { source: "po", target: "residuos" }},
+            { data: { source: "dados", target: "sustentabilidade" }},
+            { data: { source: "sustentabilidade", target: "carbono" }},
+            { data: { source: "residuos", target: "sustentabilidade" }},
+            { data: { source: "ergonomia", target: "educacao" }},
+            { data: { source: "eventos", target: "ergonomia" }},
+          ]
+        },
+        layout: {
+          name: "cose",
+          animate: true,
+          fit: true,
+          padding: 30
+        }
+      });
+
+      cy.nodes().forEach(function (node) {
+        const ref = node.popperRef();
+        const tooltip = tippy(document.createElement("div"), {
+          getReferenceClientRect: ref.getBoundingClientRect,
+          trigger: "manual",
+          content: node.data("info"),
+          placement: "top",
+          hideOnClick: false,
+          arrow: true
+        });
+
+        node.on("mouseover", () => tooltip.show());
+        node.on("mouseout", () => tooltip.hide());
+      });
+    });
+  </script>
+
+  <!-- SCRIPT DO TEMA DIA/NOITE -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      const body = document.body;
+
+      function updateIcon() {
+        if (body.classList.contains('light-mode')) {
+          toggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+          toggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+      }
+
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        body.classList.add('light-mode');
+      }
+      updateIcon();
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        const mode = body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', mode);
+        updateIcon();
+      });
+    })();
+  </script>
+
+  <!-- ANIMAÇÃO REVEAL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const revealEls = document.querySelectorAll('.reveal');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      revealEls.forEach((el) => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
