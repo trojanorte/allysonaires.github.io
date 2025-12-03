@@ -51,8 +51,8 @@ p.justificado {
 
 /* ===== NAVBAR ===== */
 .navbar {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 15px 24px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 14px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,8 +60,9 @@ p.justificado {
   position: fixed;
   width: 100%;
   top: 0;
+  left: 0;
   z-index: 1000;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .navbar-left strong {
@@ -72,22 +73,122 @@ p.justificado {
 .navbar-links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  position: relative;
+  padding: 4px 0;
 }
 
-.navbar a:hover {
-  color: #00aaff;
+/* sublinhado suave no hover */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #00aaff;
+  border-radius: 999px;
+  transition: width 0.25s ease;
 }
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Botão hambúrguer (escondido no desktop) */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ===== NAVBAR – TEMA CLARO ===== */
+body.light-mode .navbar {
+  background: linear-gradient(to right, #f3f6ff, #e4ecff);
+  color: #222;
+}
+
+body.light-mode .navbar-left strong {
+  color: #222;
+}
+
+body.light-mode .navbar a {
+  color: #222;
+}
+
+body.light-mode .navbar a::after {
+  background: #004488;
+}
+
+body.light-mode .navbar-toggle span {
+  background: #111827;
+}
+
+/* ===== NAVBAR RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 5%;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 5% 14px;
+    background: rgba(0, 0, 0, 0.96);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar-links.open {
+    max-height: 260px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+/* fundo do menu aberto no modo claro (mobile) */
+@media (max-width: 768px) {
+  body.light-mode .navbar-links {
+    background: linear-gradient(to bottom, #f3f6ff, #e4ecff);
+  }
+}
+
 
 /* Botão de CV (se usar) */
 .cv-button {
@@ -129,8 +230,9 @@ p.justificado {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.85), transparent 55%)
-              ,linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.3));
+  background:
+    radial-gradient(circle at 10% 20%, rgba(15, 23, 42, 0.85), transparent 55%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.3));
   pointer-events: none;
 }
 
@@ -149,7 +251,6 @@ p.justificado {
   pointer-events: none;
 }
 
-
 .hero-content {
   position: relative;
   max-width: 600px;
@@ -165,6 +266,28 @@ p.justificado {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* animações do fundo do hero */
+@keyframes heroGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes heroBlob {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.1);
+  }
+  100% {
+    transform: translate(20px, -20px) scale(1.05);
   }
 }
 
@@ -316,133 +439,82 @@ p.justificado {
   flex-direction: row-reverse;
 }
 
+/* ===== CÍRCULOS DOS PROJETOS (IMAGEM / LOTTIE) ===== */
 .portfolio-media {
-  flex: 0 0 230px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Imagem circular animada */
-.portfolio-image-circle {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-}
-
-/* Borda animada (tipo neon girando) */
-.portfolio-image-circle::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    #ff6ec4,
-    #7873f5,
-    #00c9ff,
-    #ff6ec4
-  );
-  z-index: 0;
-  animation: spin-border 18s linear infinite;
-}
-
-/* “Máscara” para deixar só a borda aparecendo */
-.portfolio-image-circle::after {
-  content: "";
-  position: absolute;
-  inset: 6px;
-  border-radius: 50%;
-  background: #050509;
-  z-index: 1;
-}
-
-/* Imagem flutuando levemente */
-.portfolio-image-circle img {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: float 6s ease-in-out infinite;
-  transform-origin: center;
-  transition: transform 0.5s ease;
-}
-
-/* Imagem circular animada (sem usar arquivos de imagem) */
-.portfolio-image-circle {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Borda animada (tipo neon girando) */
-.portfolio-image-circle::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
+/* Círculo base com glow */
+.portfolio-image-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    #ff6ec4,
-    #7873f5,
-    #00c9ff,
-    #ff6ec4
-  );
-  z-index: 0;
-  animation: spin-border 18s linear infinite;
+  padding: 4px;
+  background: linear-gradient(135deg, #35a2ff, #ff4ecd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* Fundo interno genérico (cada projeto ganha uma variação abaixo) */
+/* Fundo interno */
 .portfolio-image-circle::after {
   content: "";
   position: absolute;
   inset: 6px;
   border-radius: 50%;
-  z-index: 1;
-  background: radial-gradient(circle at 30% 20%, #1f2937, #020617);
+  background: radial-gradient(circle at 30% 20%, #020617, #020617);
 }
 
-/* Ícone central */
+/* Ícone estático (quando usar <i>...) */
 .portfolio-symbol {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   font-size: 3rem;
   color: #ffffff;
   animation: float 6s ease-in-out infinite;
 }
 
-/* Variações de cor por projeto */
-.circle-analytics::after {
-  background: radial-gradient(circle at 30% 20%, #1e40af, #020617);
+/* Versão com imagem ou Lottie */
+.portfolio-image-circle.has-media::after {
+  background: radial-gradient(circle at 30% 20%, #111827, #020617);
 }
 
-.circle-terra::after {
-  background: radial-gradient(circle at 30% 20%, #059669, #022c22);
+/* Imagem e Lottie ocupam quase todo o círculo */
+.portfolio-image-circle.has-media img,
+.portfolio-image-circle.has-media lottie-player {
+  position: relative;
+  z-index: 1;
+  width: 120%;
+  height: 120%;
 }
 
-.circle-kpi::after {
-  background: radial-gradient(circle at 30% 20%, #f97316, #111827);
+/* Cores externas por tipo de projeto */
+.circle-analytics {
+  background: conic-gradient(from 0deg, #4f46e5, #22d3ee, #4f46e5);
 }
 
-.circle-ia::after {
-  background: radial-gradient(circle at 30% 20%, #a855f7, #18181b);
+.circle-terra {
+  background: conic-gradient(from 0deg, #22c55e, #06b6d4, #22c55e);
 }
 
-.circle-event::after {
-  background: radial-gradient(circle at 30% 20%, #facc15, #78350f);
+.circle-kpi {
+  background: conic-gradient(from 0deg, #f97316, #ec4899, #f97316);
 }
 
-/* Animações */
+.circle-ia {
+  background: conic-gradient(from 0deg, #a855f7, #22d3ee, #a855f7);
+}
+
+.circle-event {
+  background: conic-gradient(from 0deg, #facc15, #fb7185, #facc15);
+}
+
+/* animações usadas no portfólio */
 @keyframes spin-border {
   0% {
     transform: rotate(0deg);
@@ -464,7 +536,7 @@ p.justificado {
   }
 }
 
-/* Leve “zoom” no hover do card inteiro */
+/* leve “zoom” no hover do card inteiro */
 .portfolio-card:hover .portfolio-symbol {
   transform: translateY(-4px) scale(1.05);
 }
@@ -611,7 +683,6 @@ body.light-mode .navbar {
   color: #222;
 }
 
-
 body.light-mode .navbar-left strong {
   color: #222;
 }
@@ -634,7 +705,7 @@ body.light-mode p {
   color: #333c54;
 }
 
-/* >>> AQUI entra o ajuste dos títulos <<< */
+/* títulos em modo claro */
 body.light-mode .section h1,
 body.light-mode .section h2,
 body.light-mode .section h3,
@@ -674,6 +745,40 @@ body.light-mode .theme-toggle {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== HERO EM MODO CLARO ===== */
+body.light-mode .hero {
+  background-image: radial-gradient(circle at 0% 0%, #e5edff, #f9fbff 40%, #d9e5ff);
+}
+
+/* tira aquele escurecimento pesado no modo claro */
+body.light-mode .hero::before {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.9), transparent 55%),
+    linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.4));
+}
+
+body.light-mode .hero::after {
+  background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 60%);
+}
+
+/* textos do hero em modo claro */
+body.light-mode .hero h1 {
+  color: #111827;
+}
+
+body.light-mode .hero-subtitle {
+  color: #4b5563;
+}
+
+body.light-mode .hero-social a {
+  color: #111827;
+}
+
+body.light-mode .hero-social a:hover {
+  color: #004488;
+}
+
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 900px) {

@@ -15,6 +15,9 @@
 
   <!-- Seu CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- LottieFiles - animações em JSON -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 
@@ -23,6 +26,14 @@
     <div class="navbar-left">
       <strong>Allyson Aires</strong>
     </div>
+
+    <!-- Botão hambúrguer (mobile) -->
+    <button class="navbar-toggle" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <div class="navbar-links">
       <a href="#sobre">Sobre</a>
       <a href="#habilidades">Habilidades</a>
@@ -32,13 +43,14 @@
     </div>
   </div>
 
+
   <!-- BOTÃO TEMA -->
   <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
     <i class="fa-solid fa-moon"></i>
   </button>
 
   <!-- HERO -->
-  <div class="hero">
+  <section class="hero">
     <div class="hero-content">
       <h1>Allyson Aires</h1>
       <p class="hero-subtitle">
@@ -69,40 +81,51 @@
         </a>
       </div>
     </div>
-  </div>
 
+    <div class="hero-animation">
+      <lottie-player
+        src="assets/animations/Dashboard.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay>
+      </lottie-player>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
   <section class="section reveal" id="sobre">
-  <h1>Sobre Mim</h1>
-  <p class="justificado">
-    Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de
-    Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong>,
-    <strong>Ciência de Dados</strong> e <strong>Inteligência Artificial aplicada</strong>.
-    Minha atuação sempre esteve ligada a <strong>análise de dados, melhoria de processos
-    e apoio à decisão</strong> em ambientes reais.
-  </p>
+    <h1>Sobre Mim</h1>
+    <p class="justificado">
+      Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de
+      Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong>,
+      <strong>Ciência de Dados</strong> e <strong>Inteligência Artificial aplicada</strong>.
+      Minha atuação sempre esteve ligada a <strong>análise de dados, melhoria de processos
+      e apoio à decisão</strong> em ambientes reais.
+    </p>
 
-  <p class="justificado">
-    Tenho experiência como <strong>estagiário de pós-graduação em Engenharia de Produção
-    no Tribunal de Justiça do RN (TJRN)</strong>, onde trabalhei com mapeamento de processos,
-    construção de <strong>dashboards</strong> e automação de rotinas com <strong>Excel, Power BI
-    e Python</strong> para monitorar indicadores de desempenho.
-  </p>
+    <p class="justificado">
+      Tenho experiência como <strong>estagiário de pós-graduação em Engenharia de Produção
+      no Tribunal de Justiça do RN (TJRN)</strong>, onde trabalhei com mapeamento de processos,
+      construção de <strong>dashboards</strong> e automação de rotinas com <strong>Excel, Power BI
+      e Python</strong> para monitorar indicadores de desempenho.
+    </p>
 
-  <p class="justificado">
-    Atuei também como <strong>Assessor Técnico na Prefeitura Municipal de São Paulo do Potengi</strong>,
-    apoiando a gestão pública por meio de <strong>análises de dados, desenho de políticas e
-    padronização de procedimentos</strong>, e como <strong>Assistente Financeiro</strong> em empresa
-    privada, trabalhando com fluxo de caixa, previsão de demanda, vendas on-line e
-    organização de informações gerenciais.
-  </p>
+    <p class="justificado">
+      Atuei também como <strong>Assessor Técnico na Prefeitura Municipal de São Paulo do Potengi</strong>,
+      apoiando a gestão pública por meio de <strong>análises de dados, desenho de políticas e
+      padronização de procedimentos</strong>, e como <strong>Assistente Financeiro</strong> em empresa
+      privada, trabalhando com fluxo de caixa, previsão de demanda, vendas on-line e
+      organização de informações gerenciais.
+    </p>
 
-  <p class="justificado">
-    Hoje, busco oportunidades para aplicar essa combinação de
-    <strong>engenharia, finanças e dados</strong> em empresas que queiram
-    <strong>estruturar indicadores, automatizar análises e explorar IA generativa</strong>
-    para ganhar eficiência e tomar decisões com mais segurança.
-  </p>
-</section>
+    <p class="justificado">
+      Hoje, busco oportunidades para aplicar essa combinação de
+      <strong>engenharia, finanças e dados</strong> em empresas que queiram
+      <strong>estruturar indicadores, automatizar análises e explorar IA generativa</strong>
+      para ganhar eficiência e tomar decisões com mais segurança.
+    </p>
+  </section>
 
   <!-- HABILIDADES -->
   <section id="habilidades" class="section reveal">
@@ -168,131 +191,145 @@
     </div>
   </section>
 
- <!-- PORTFÓLIO ELEGANTE -->
-<section id="projetos" class="section section-portfolio reveal">
-  <h1>Portfólio</h1>
+  <!-- PORTFÓLIO ELEGANTE -->
+  <section id="projetos" class="section section-portfolio reveal">
+    <h1>Portfólio</h1>
 
-  <div class="portfolio-container">
+    <div class="portfolio-container">
 
-    <!-- Projeto 1: GLOBE Research Dashboard -->
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <div class="portfolio-image-circle circle-analytics">
-          <div class="portfolio-symbol">
-            <i class="fas fa-chart-line"></i>
+      <!-- Projeto 1: GLOBE Research Dashboard -->
+      <article class="portfolio-card">
+        <div class="portfolio-media">
+          <div class="portfolio-image-circle has-media">
+            <img
+              src="assets/images/tela.jpg"
+              alt="GLOBE Research Dashboard"
+            />
           </div>
         </div>
-      </div>
-      <div class="portfolio-content">
-        <h3>GLOBE Research Dashboard</h3>
-        <p>
-          Desenvolvimento de dashboard interativo para análise de pesquisas acadêmicas,
-          utilizando <strong>Streamlit</strong>, <strong>Pandas</strong> e
-          <strong>Web Scraping (Selenium)</strong>, permitindo explorar temas, autores
-          e países em tempo real.
-        </p>
-        <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/"
-           target="_blank" rel="noopener" class="btn-portfolio">
-          Ver projeto <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </article>
+        <div class="portfolio-content">
+          <h3>GLOBE Research Dashboard</h3>
+          <p>
+            Desenvolvimento de dashboard interativo para análise de pesquisas acadêmicas,
+            utilizando <strong>Streamlit</strong>, <strong>Pandas</strong> e
+            <strong>Web Scraping (Selenium)</strong>, permitindo explorar temas, autores
+            e países em tempo real.
+          </p>
+          <a href="https://trojanorte-globe-dashboard-app-rrdlxy.streamlit.app/"
+             target="_blank" rel="noopener" class="btn-portfolio">
+            Ver projeto <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
 
-    <!-- Projeto 2: TerraVisor -->
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <div class="portfolio-image-circle circle-terra">
-          <div class="portfolio-symbol">
-            <i class="fas fa-globe-americas"></i>
+      <!-- Projeto 2: TerraVisor -->
+      <article class="portfolio-card">
+        <div class="portfolio-media">
+          <div class="portfolio-image-circle has-media">
+            <lottie-player
+              src="assets/animations/TerraVisor.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay>
+            </lottie-player>
           </div>
         </div>
-      </div>
-      <div class="portfolio-content">
-        <h3>TerraVisor – Monitoramento Ambiental</h3>
-        <p>
-          Plataforma modular baseada em <strong>microsserviços</strong> para
-          <strong>monitoramento ambiental</strong> e apoio à tomada de decisão,
-          integrando dados geoespaciais e indicadores em visualizações acionáveis.
-        </p>
-        <a href="https://github.com/trojanorte"
-           target="_blank" rel="noopener" class="btn-portfolio">
-          Ver mais <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </article>
+        <div class="portfolio-content">
+          <h3>TerraVisor – Monitoramento Ambiental</h3>
+          <p>
+            Plataforma modular baseada em <strong>microsserviços</strong> para
+            <strong>monitoramento ambiental</strong> e apoio à tomada de decisão,
+            integrando dados geoespaciais e indicadores em visualizações acionáveis.
+          </p>
+          <a href="https://github.com/trojanorte"
+             target="_blank" rel="noopener" class="btn-portfolio">
+            Em breve, será publicado pela CAB <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
 
-    <!-- Projeto 3: Case de Indicadores & Dashboards – Gestão Operacional -->
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <div class="portfolio-image-circle circle-kpi">
-          <div class="portfolio-symbol">
-            <i class="fas fa-chart-bar"></i>
+           <!-- Projeto 3: Case de Indicadores & Dashboards – Gestão Operacional -->
+      <article class="portfolio-card">
+        <div class="portfolio-media">
+          <div class="portfolio-image-circle has-media circle-kpi">
+            <lottie-player
+              src="assets/animations/Case.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay>
+            </lottie-player>
           </div>
         </div>
-      </div>
-      <div class="portfolio-content">
-        <h3>Case – Indicadores e Dashboards para Gestão Operacional</h3>
-        <p>
-          Desenvolvimento de <strong>painéis de indicadores</strong> e relatórios gerenciais
-          para acompanhar <strong>produtividade, prazos, qualidade e metas</strong> em equipes
-          e processos. Envolve definição de <strong>KPIs</strong>, integração de dados de
-          diferentes fontes e criação de visualizações em <strong>Power BI</strong>, com
-          automações em <strong>Excel e Python</strong>.
-        </p>
-        <a href="#contato" class="btn-portfolio">
-          Saber detalhes do case <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </article>
+        <div class="portfolio-content">
+          <h3>Case – Indicadores e Dashboards para Gestão Operacional</h3>
+          <p>
+            Desenvolvimento de <strong>painéis de indicadores</strong> e relatórios gerenciais
+            para acompanhar <strong>produtividade, prazos, qualidade e metas</strong> em equipes
+            e processos. Envolve definição de <strong>KPIs</strong>, integração de dados de
+            diferentes fontes e criação de visualizações em <strong>Power BI</strong>, com
+            automações em <strong>Excel e Python</strong>.
+          </p>
+          <a href="#contato" class="btn-portfolio">
+            Saber detalhes do case <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
 
-    <!-- Projeto 4: IA para apoio à decisão – ENEGEP 2025 -->
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <div class="portfolio-image-circle circle-ia">
-          <div class="portfolio-symbol">
-            <i class="fas fa-brain"></i>
+      <!-- Projeto 4: IA para apoio à decisão – ENEGEP 2025 -->
+      <article class="portfolio-card">
+        <div class="portfolio-media">
+          <div class="portfolio-image-circle has-media circle-ia">
+            <lottie-player
+              src="assets/animations/IAacoes.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay>
+            </lottie-player>
           </div>
         </div>
-      </div>
-      <div class="portfolio-content">
-        <h3>IA para Escolha de Ações – ENEGEP 2025</h3>
-        <p>
-          Artigo científico publicado no <strong>ENEGEP 2025</strong> em que desenvolvi um
-          <strong>modelo de apoio à decisão</strong> combinando
-          <strong>métodos multicritério</strong> e <strong>Inteligência Artificial</strong>
-          para <strong>priorizar ações de melhoria</strong> em um contexto real.
-        </p>
-        <a href="https://www.abepro.org.br/publicacoes/artigo.asp?e=enegep&a=2025&c=51276"
-           target="_blank" rel="noopener" class="btn-portfolio">
-          Ver artigo <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </article>
+        <div class="portfolio-content">
+          <h3>IA para Escolha de Ações – ENEGEP 2025</h3>
+          <p>
+            Artigo científico publicado no <strong>ENEGEP 2025</strong> em que desenvolvi um
+            <strong>modelo de apoio à decisão</strong> combinando
+            <strong>métodos multicritério</strong> e <strong>Inteligência Artificial</strong>
+            para <strong>priorizar ações de melhoria</strong> em um contexto real.
+          </p>
+          <a href="https://www.abepro.org.br/publicacoes/artigo.asp?e=enegep&a=2025&c=51276"
+             target="_blank" rel="noopener" class="btn-portfolio">
+            Ver artigo <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
 
-    <!-- Projeto 5: Luzes do Potengi -->
-    <article class="portfolio-card">
-      <div class="portfolio-media">
-        <div class="portfolio-image-circle circle-event">
-          <div class="portfolio-symbol">
-            <i class="fas fa-tree"></i>
+      <!-- Projeto 5: Luzes do Potengi -->
+      <article class="portfolio-card">
+        <div class="portfolio-media">
+          <div class="portfolio-image-circle has-media circle-event">
+            <lottie-player
+              src="assets/animations/Luzes-do-Potengi.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay>
+            </lottie-player>
           </div>
         </div>
-      </div>
-      <div class="portfolio-content">
-        <h3>Luzes do Potengi</h3>
-        <p>
-          Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais
-          e uma atmosfera festiva. Atuação na estruturação, organização e mobilização da comunidade,
-          conectando gestão de projetos, logística e impacto social.
-        </p>
-        <a href="#contato" class="btn-portfolio">
-          Saber mais <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-    </article>
-
-  </div>
-</section>
+        <div class="portfolio-content">
+          <h3>Luzes do Potengi</h3>
+          <p>
+            Evento natalino que transforma São Paulo do Potengi com luzes, apresentações culturais
+            e uma atmosfera festiva. Atuação na estruturação, organização e mobilização da comunidade,
+            conectando gestão de projetos, logística e impacto social.
+          </p>
+          <a href="#contato" class="btn-portfolio">
+            Saber mais <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
 
   <!-- PRÊMIOS -->
   <section id="premios" class="section reveal">
