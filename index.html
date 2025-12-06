@@ -27,11 +27,11 @@
       <strong>Allyson Aires</strong>
     </div>
     <div class="navbar-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#premios">Prêmios e Reconhecimentos</a>
-      <a href="#contato">Contato</a>
+      <a href="#sobre" data-i18n="nav-sobre">Sobre</a>
+      <a href="#habilidades" data-i18n="nav-habilidades">Habilidades</a>
+      <a href="#projetos" data-i18n="nav-projetos">Projetos</a>
+      <a href="#premios" data-i18n="nav-premios">Prêmios e Reconhecimentos</a>
+      <a href="#contato" data-i18n="nav-contato">Contato</a>
     </div>
   </div>
 
@@ -44,9 +44,10 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Allyson Aires</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle" data-i18n="hero-subtitle">
         Engenheiro de Produção · Ciência de Dados · Pesquisa Operacional
       </p>
+
       <div class="hero-social">
         <a href="mailto:allysonaires@gmail.com" title="Email">
           <i class="fas fa-envelope"></i>
@@ -86,8 +87,9 @@
 
   <!-- SOBRE -->
   <section class="section reveal" id="sobre">
-    <h1>Sobre Mim</h1>
-    <p class="justificado">
+    <h1 data-i18n="sobre-title">Sobre Mim</h1>
+
+    <p class="justificado" data-i18n="sobre-p1">
       Sou <strong>Allyson Aires</strong>, Engenheiro de Produção e mestrando em Engenharia de
       Produção pela UFRN, com foco em <strong>Pesquisa Operacional</strong>,
       <strong>Ciência de Dados</strong> e <strong>Inteligência Artificial aplicada</strong>.
@@ -95,14 +97,14 @@
       e apoio à decisão</strong> em ambientes reais.
     </p>
 
-    <p class="justificado">
+    <p class="justificado" data-i18n="sobre-p2">
       Tenho experiência como <strong>estagiário de pós-graduação em Engenharia de Produção
       no Tribunal de Justiça do RN (TJRN)</strong>, onde trabalhei com mapeamento de processos,
       construção de <strong>dashboards</strong> e automação de rotinas com <strong>Excel, Power BI
       e Python</strong> para monitorar indicadores de desempenho.
     </p>
 
-    <p class="justificado">
+    <p class="justificado" data-i18n="sobre-p3">
       Atuei também como <strong>Assessor Técnico na Prefeitura Municipal de São Paulo do Potengi</strong>,
       apoiando a gestão pública por meio de <strong>análises de dados, desenho de políticas e
       padronização de procedimentos</strong>, e como <strong>Assistente Financeiro</strong> em empresa
@@ -110,7 +112,7 @@
       organização de informações gerenciais.
     </p>
 
-    <p class="justificado">
+    <p class="justificado" data-i18n="sobre-p4">
       Hoje, busco oportunidades para aplicar essa combinação de
       <strong>engenharia, finanças e dados</strong> em empresas que queiram
       <strong>estruturar indicadores, automatizar análises e explorar IA generativa</strong>
@@ -183,7 +185,7 @@
   </section>
 
   <!-- PORTFÓLIO ELEGANTE -->
-  <section id="projetos" class="section section-portfolio">
+  <section id="projetos" class="section section-portfolio reveal">
     <h1>Portfólio</h1>
 
     <div class="portfolio-container">
@@ -240,7 +242,7 @@
         </div>
       </article>
 
-           <!-- Projeto 3: Case de Indicadores & Dashboards – Gestão Operacional -->
+      <!-- Projeto 3: Case de Indicadores & Dashboards – Gestão Operacional -->
       <article class="portfolio-card">
         <div class="portfolio-media">
           <div class="portfolio-image-circle has-media circle-kpi">
@@ -321,6 +323,9 @@
           </a>
         </div>
       </article>
+
+    </div>
+  </section>
 
   <!-- PRÊMIOS -->
   <section id="premios" class="section reveal">
@@ -570,6 +575,48 @@
 
       revealEls.forEach((el) => observer.observe(el));
     });
+  </script>
+
+  <!-- SCRIPT DE IDIOMA AUTOMÁTICO (PT padrão, EN se navegador não for PT) -->
+  <script>
+    (function () {
+      var userLang = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+
+      // Se começa com "pt", mantém tudo em português
+      if (userLang.startsWith('pt')) {
+        return;
+      }
+
+      // Dicionário de traduções EN
+      var i18nEn = {
+        // Navbar
+        "nav-sobre": "About",
+        "nav-habilidades": "Skills",
+        "nav-projetos": "Projects",
+        "nav-premios": "Awards & Recognition",
+        "nav-contato": "Contact",
+
+        // Hero
+        "hero-subtitle": "Production Engineer · Data Science · Operations Research",
+
+        // Sobre Mim
+        "sobre-title": "About Me",
+        "sobre-p1": "I am <strong>Allyson Aires</strong>, a Production Engineer and Master's student in Production Engineering at UFRN, focused on <strong>Operations Research</strong>, <strong>Data Science</strong> and <strong>Applied Artificial Intelligence</strong>. My work is closely connected to <strong>data analysis, process improvement and decision support</strong> in real environments.",
+        "sobre-p2": "I have experience as a <strong>postgraduate intern in Production Engineering at the Court of Justice of Rio Grande do Norte (TJRN)</strong>, working with process mapping, <strong>dashboard</strong> development and automation of routines using <strong>Excel, Power BI and Python</strong> to monitor performance indicators.",
+        "sobre-p3": "I also worked as a <strong>Technical Advisor at the Municipality of São Paulo do Potengi</strong>, supporting public management through <strong>data analysis, policy design and standardization of procedures</strong>, and as a <strong>Financial Assistant</strong> in the private sector, dealing with cash flow, demand forecasting, online sales and organization of management information.",
+        "sobre-p4": "Today, I look for opportunities to apply this combination of <strong>engineering, finance and data</strong> in organizations that want to <strong>build indicators, automate analyses and explore generative AI</strong> to gain efficiency and make safer decisions."
+      };
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(function (el) {
+          var key = el.getAttribute('data-i18n');
+          if (i18nEn[key]) {
+            el.innerHTML = i18nEn[key];
+          }
+        });
+      });
+    })();
   </script>
 
 </body>

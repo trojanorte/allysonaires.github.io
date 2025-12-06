@@ -5,6 +5,19 @@
   box-sizing: border-box;
 }
 
+/* ===== CONTROLE DE IDIOMAS ===== */
+[data-lang] {
+  display: none;
+}
+
+body.lang-pt [data-lang="pt"] {
+  display: block;
+}
+
+body.lang-en [data-lang="en"] {
+  display: block;
+}
+
 /* Compensa o menu fixo quando clica nas âncoras */
 section {
   scroll-margin-top: 80px;
